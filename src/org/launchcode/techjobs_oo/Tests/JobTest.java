@@ -44,4 +44,20 @@ public class JobTest {
         assertFalse(testJob5.equals(testJob4));
     }
 
+    //toString tests
+    @Test
+    public void toStringStartsAndEndsWithBlankLine(){
+        assertTrue(testJob3.toString().endsWith("\n"));
+        assertTrue(testJob3.toString().startsWith("\n"));
+    }
+    @Test
+    public void toStringContainsEachFieldLabelPlusDataOnOneLinePerField(){
+        assertTrue(testJob3.toString().contains("ID: "+testJob3.getId()+"\n"));
+        assertTrue(testJob3.toString().contains("Name: "+"Product tester"+"\n"));
+        assertTrue(testJob3.toString().contains("Employer: "+"ACME"+"\n"));
+        assertTrue(testJob3.toString().contains("Location: "+"Desert"+"\n"));
+        assertTrue(testJob3.toString().contains("Position Type: "+"Quality control"+"\n"));
+        assertTrue(testJob3.toString().contains("Core Competency: "+"Persistence"+"\n"));
+    }
+
 }
