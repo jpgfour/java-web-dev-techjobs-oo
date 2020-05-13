@@ -23,7 +23,12 @@ public class Job {
 
     public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
         this();
-        this.name = name;
+        //this.name = name;
+        if(name!=""&&name!=null) {
+            this.name = name;
+        }else{
+            this.name = "Data not available";
+        }
         this.employer = employer;
         this.location = location;
         this.positionType = positionType;
@@ -95,13 +100,26 @@ public class Job {
 
     @Override
     public String toString() {
+        if (name.equals("Data not available")) {
+            if (employer.getValue().equals("") || employer.getValue() == null) {
+                if (location.getValue().equals("") || location.getValue() == null) {
+                    if (positionType.getValue().equals("") || positionType.getValue() == null) {
+                        if (coreCompetency.getValue().equals("") || coreCompetency.getValue() == null) {
+                            return "OOPS! This job does not seem to exist.";
+                        }
+                    }
+                }
+            }
+
+        }
+        //triggers if all settable values are neither empty nor null
         return "\n" +
-                "ID: " + id + "\n" +
-                "Name: " + name + "\n" +
-                "Employer: " + employer + "\n" +
-                "Location: " + location + "\n" +
-                "Position Type: " + positionType + "\n" +
-                "Core Competency: " + coreCompetency + "\n" +
-                "\n";
+                    "ID: " + id + "\n" +
+                    "Name: " + name + "\n" +
+                    "Employer: " + employer + "\n" +
+                    "Location: " + location + "\n" +
+                    "Position Type: " + positionType + "\n" +
+                    "Core Competency: " + coreCompetency + "\n" +
+                    "\n";
+        }
     }
-}
