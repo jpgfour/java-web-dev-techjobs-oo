@@ -119,7 +119,7 @@ public class Job {
                     "Employer: " + employer + "\n" +
                     "Location: " + location + "\n" +
                     "Position Type: " + positionType + "\n" +
-                    "Core Competency: " + coreCompetency + "\n" +
-                    "\n";
+                    "Core Competency: " + coreCompetency + "\n"; //+
+                    //"\n";
         }
     }
