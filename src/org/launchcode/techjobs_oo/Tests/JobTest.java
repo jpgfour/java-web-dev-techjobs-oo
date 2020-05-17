@@ -77,7 +77,8 @@ public class JobTest {
         //no need to test for empty ID field as it can't be left empty or overwritten to empty (no setter parameter)
         //5 settable fields tested
         assertTrue(testJob6.toString().contains("Name: Data not available\n"));
-        //assertTrue(testJob6.toString().contains("Employer: Data not available\n"));
+        //Employer test won't trigger "Data not available" so as to not trigger "OOPS" result coded as part of the bonus.
+        assertTrue(testJob6.toString().contains("Employer: Unknown Worlds\n"));
         assertTrue(testJob6.toString().contains("Location: Data not available\n"));
         assertTrue(testJob6.toString().contains("Position Type: Data not available\n"));
         assertTrue(testJob6.toString().contains("Core Competency: Data not available\n"));
